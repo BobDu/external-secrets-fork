@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../pictures/eso-round-logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
     
     
       
@@ -982,6 +982,8 @@
       
         
       
+        
+      
     
     
     
@@ -1326,6 +1328,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/generator/sshkey/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSHKey
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1342,6 +1367,8 @@
   
     
     
+      
+        
       
         
       
@@ -1444,6 +1471,29 @@
   
   <span class="md-ellipsis">
     Metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/selectable-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Selectable Fields
     
   </span>
   
@@ -4435,7 +4485,7 @@ NtFUGA95RGN9s+pl6XY0YARPHf5O76ErC1OZtDTR5RdyQfcM+94gYZsexsXl0aQO
 <span class="w">        </span><span class="nt">tls.crt</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">.mysecret</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">filterPEM</span><span class="nv"> </span><span class="s">&quot;</span><span class="l l-Scalar l-Scalar-Plain">CERTIFICATE&quot; }}&quot;</span>
 <span class="w">        </span><span class="nt">tls.key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{</span><span class="nv"> </span><span class="s">.mysecret</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">filterPEM</span><span class="nv"> </span><span class="s">&quot;</span><span class="l l-Scalar l-Scalar-Plain">PRIVATE KEY&quot; }}&quot;</span>
 </code></pre></div>
-<p>In case you have a secret that contains a (partial) certificate chain you can extract the <code>leaf</code>, <code>intermediate</code> or <code>root</code> certificate(s) using the <code>filterCertChain</code> function. See the following example on how to use the <code>filterPEM</code> and <code>filterCertChain</code> functions together to split the certificate chain into a <code>tls.crt</code> part only containting the leaf certificate and a <code>ca.crt</code> part with all the intermediate certificates.</p>
+<p>In case you have a secret that contains a (partial) certificate chain you can extract the <code>leaf</code>, <code>intermediate</code> or <code>root</code> certificate(s) using the <code>filterCertChain</code> function. See the following example on how to use the <code>filterPEM</code> and <code>filterCertChain</code> functions together to split the certificate chain into a <code>tls.crt</code> part only containing the leaf certificate and a <code>ca.crt</code> part with all the intermediate certificates.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
 <span class="nt">metadata</span><span class="p">:</span>
@@ -4519,6 +4569,14 @@ created at the provider.</p>
 <tr>
 <td>fullPemToPkcs12Pass</td>
 <td>Same as <code>fullPemToPkcs12</code>. Uses the provided password to encrypt the PKCS#12 archive.</td>
+</tr>
+<tr>
+<td>pemTruststoreToPKCS12</td>
+<td>Takes a PEM encoded certificates and creates a base64 encoded PKCS#12 archive.</td>
+</tr>
+<tr>
+<td>pemTruststoreToPKCS12Pass</td>
+<td>Same as <code>pemTruststoreToPKCS12</code>. Uses the provided password to encrypt the PKCS#12 archive.</td>
 </tr>
 <tr>
 <td>filterPEM</td>
@@ -4645,10 +4703,10 @@ For a list of trademarks of The Linux Foundation, please see our <a href="https:
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
     
   </body>
